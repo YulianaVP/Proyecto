@@ -1,0 +1,19 @@
+{
+  "name": "backend-correctaexpresion",
+  "version": "1.0.1",
+  "description": "Proyecto correcta expresión",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YulianaVP/equipo2_sac_ppi2020.git"
+  },
+  "author": "Manuela Martínez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YulianaVP/equipo2_sac_ppi2020/issues"
+  },
+  "homepage": "https://github.com/YulianaVP/equipo2_sac_ppi2020#readme"
+}
