@@ -6,5 +6,5 @@ app.get ('/Correctaexpresión', function(req, res){
 })
 
 app.listen(8080, function(){
-    console.log("Bieeenvenidos a Correcta expresión")
+    console.log("Bienvenidos a Correcta expresión")
 })
