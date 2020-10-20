@@ -1,0 +1,48 @@
+.Insignia {
+  background: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 8px 8px 8px 8px;
+  overflow: hidden;
+  height: 380px;
+}
+
+.Insignia_header {
+  padding: 0.5rem 0;
+  height: 80px;
+  background: #72727570;
+  display: flex;
+  justify-content: center;
+}
+
+.Insignia__section_name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.Insignia__section_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  background: #f4f4f7;
+}
+
+.Insignia__avatar {
+  border-radius: 50%;
+  margin-right: 1rem;
+  width: 120px;
+  height: 120px;
+}
+
+.Insignia__footer {
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #98ca3f;
+  font-weight: bold;
+  font-style: italic;
+}
