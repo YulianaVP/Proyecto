@@ -1,26 +1,29 @@
 {
-  "name": "backend-correctaexpresion",
-  "version": "1.0.1",
-  "description": "Proyecto correcta expresión",
+  "name": "equipo2sacppi2020",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1", 
-    "dev" : "nodemon index",
-    "strat" : "node index"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/YulianaVP/equipo2_sac_ppi2020.git"
   },
-  "author": "Manuela Martínez Chaverra",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/YulianaVP/equipo2_sac_ppi2020/issues"
   },
   "homepage": "https://github.com/YulianaVP/equipo2_sac_ppi2020#readme",
   "dependencies": {
+    "bootstrap": "^4.5.3",
     "express": "^4.17.1",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.6"
+    "mysql": "^2.18.1",
+    "react": "^17.0.0",
+    "react-bootstrap": "^1.3.0",
+    "react-dom": "^17.0.0",
+    "react-router-dom": "^5.2.0"
   }
 }
