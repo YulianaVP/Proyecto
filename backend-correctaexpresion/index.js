@@ -1,10 +1,24 @@
-const express = require('express')
+const express = require("express")
+const morgan = require("morgan")
 const app = express()
+
+//Middlewares
+app.use(morgan("dev"))
+app.use(express.json())
+
+//ROUTES
+app.use("/api/",require('./routes/usuarios'))
+
+app.get("/", (req, res) => {
+  res.send("API CRUD")
+})
 
 app.get ('/Correctaexpresión', function(req, res){
     res.send('Correcta expresión');
 })
 
-app.listen(8080, function(){
-    console.log("Bienvenidos a Correcta expresión")
+app.set("puerto", 9001)
+
+app.listen(app.get("puerto"), () => {
+  console.log(`Servidor escuchando en el puerto ${app.get("puerto")}`)
 })
