@@ -1,5 +1,5 @@
 language = "nodejs"
 # run = "cd frontend-correctaexpresion && npm i"
-run = "cd frontend-correctaexpresion && npm start"
+# run = "cd frontend-correctaexpresion && npm start"
 # run = "cd backend-correctaexpresion && npm i"
-# run = "cd backend-correctaexpresion && npm run dev"
+ run = "cd backend-correctaexpresion && npm run dev"
