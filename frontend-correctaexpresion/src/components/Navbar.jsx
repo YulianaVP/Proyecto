@@ -7,7 +7,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav class="navbar navbar-light bg-light">
-        <Link to="/home" className="logo-navbar">
+        <Link to="/" className="logo-navbar">
           <a class="navbar-brand">
             <img
               className="img-fluid"
@@ -21,7 +21,7 @@ class Navbar extends React.Component {
         </Link>
 
         <form class="form-inline">
-          <Link to="/home" className="btn btn-light">
+          <Link to="/" className="btn btn-light">
             Menú principal
           </Link>
           <Link to="/iniciarsesion" className="btn btn-light">
