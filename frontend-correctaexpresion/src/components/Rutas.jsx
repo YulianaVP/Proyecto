@@ -23,7 +23,7 @@ function Rutas() {
     <BrowserRouter>
       <Layout>
         <Switch>
-          <Route exact path="/home" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/iniciarsesion" component={Iniciosesion} />
           <Route exact path="/registro" component={Registro} />
 
