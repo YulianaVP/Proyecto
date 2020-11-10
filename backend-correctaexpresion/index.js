@@ -7,7 +7,8 @@ app.use(morgan("dev"))
 app.use(express.json())
 
 //ROUTES
-app.use("/api/",require('./routes/usuarios'))
+app.use("/api/", require('./routes/usuarios'))
+app.use("/api/", require('./routes/docente'))
 
 app.get("/", (req, res) => {
   res.send("API CRUD")
