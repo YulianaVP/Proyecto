@@ -3,8 +3,8 @@ const router = Router()
 const {connection} = require ('./../db/mysql_pool')
 
 
-router.get('/docente', (req, res) => {
-  connection.query("SELECT * FROM docente", (error, result, fields)=> {
+router.get('/evaluacion', (req, res) => {
+  connection.query("SELECT * FROM evaluacion", (error, result, fields)=> {
     res.json(result)
   }) 
 })
