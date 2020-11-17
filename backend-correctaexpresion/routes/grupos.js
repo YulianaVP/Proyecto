@@ -2,6 +2,7 @@ const { Router } = require("express")
 const router = Router()
 const {connection} = require('../db/mysql_pool')
     
+    
 router.get("/grupos", (req, res) => {
     connection.query('SELECT * FROM grupos',  (error, rows, fields) => {
         if(!error){

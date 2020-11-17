@@ -7,13 +7,21 @@ app.use(morgan("dev"))
 app.use(express.json())
 
 //ROUTES
-app.use("/api/", require('./routes/usuarios'))
-app.use("/api/", require('./routes/docente'))
-app.use("/api/", require('./routes/preguntas'))
-app.use("/api/", require('./routes/respuestas'))
 app.use("/api/", require('./routes/alumno'))
+app.use("/api/", require('./routes/docente'))
+app.use("/api/", require('./routes/evaluación'))
 app.use("/api/", require('./routes/grupos'))
 app.use("/api/", require('./routes/niveles'))
+app.use("/api/", require('./routes/preguntas'))
+app.use("/api/", require('./routes/puntaje'))
+app.use("/api/", require('./routes/respuestas'))
+app.use("/api/", require('./routes/usuarios'))
+
+
+
+
+
+
 
 app.get("/", (req, res) => {
   res.send("API CRUD")
