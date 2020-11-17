@@ -2,8 +2,8 @@ const { Router } = require("express")
 const router = Router()
 const {connection} = require('../db/mysql')
     
-router.get("/usuarios", (req, res) => {
-    connection.query('SELECT * FROM usuarios',  (error, rows, fields) => {
+router.get("/niveles", (req, res) => {
+    connection.query('SELECT * FROM niveles',  (error, rows, fields) => {
         if(!error){
             res.json(rows)
         }else{
@@ -12,19 +12,19 @@ router.get("/usuarios", (req, res) => {
     })
 })
 
-router.post ("/usuarios", (req, res) => {
+router.post ("/niveles", (req, res) => {
 
 })
 
-router.put ("/usuarios/:id", (req, res) => {
+router.put ("/niveles/:id", (req, res) => {
 
 })
 
-router.delete ("/usuarios/:id", (req, res) => {
+router.delete ("/niveles/:id", (req, res) => {
 
 })
 
-router.get ("/usuarios/:id", (req, res) => {
+router.get ("/niveles/:id", (req, res) => {
 
 })
 
