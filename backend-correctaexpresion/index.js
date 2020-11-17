@@ -5,6 +5,7 @@ const app = express()
 //Middlewares
 app.use(morgan("dev"))
 app.use(express.json())
+app.use(express.static('public'));
 
 //ROUTES
 app.use("/api/", require('./routes/alumno'))
