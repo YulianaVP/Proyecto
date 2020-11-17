@@ -9,6 +9,8 @@ app.use(express.json())
 //ROUTES
 app.use("/api/", require('./routes/usuarios'))
 app.use("/api/", require('./routes/docente'))
+app.use("/api/", require('./routes/preguntas'))
+app.use("/api/", require('./routes/respuestas'))
 
 app.get("/", (req, res) => {
   res.send("API CRUD")
