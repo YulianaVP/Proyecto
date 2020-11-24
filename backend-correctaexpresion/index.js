@@ -18,12 +18,6 @@ app.use("/api/", require('./routes/puntaje'))
 app.use("/api/", require('./routes/respuestas'))
 app.use("/api/", require('./routes/usuarios'))
 
-
-
-
-
-
-
 app.get("/", (req, res) => {
   res.send("API CRUD")
 })
