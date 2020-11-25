@@ -7,15 +7,16 @@ const {connection} = require('../db/mysql_pool')
 
 
 const cargador = multer({
-storage : multer.diskStorage({
-  destination : (req, file, cb) => {
-    cb(null, path.join(__dirname,'../public/uploads'))
-  },
-  filename : (req, file, cb) => {
-      cb(null, uuidv4() + path.extname(file.originalname));
-  }
-})
-})
+    storage : multer.diskStorage({
+      destination : (req, file, cb) => {
+        cb(null, path.join(__dirname,'../public/uploads'))
+      },
+      filename : (req, file, cb) => {
+         cb(null, uuidv4() + path.extname(file.originalname));
+      }
+    })
+  })
+
 
 router.get("/usuarios", (req, res) => {
     connection.query('SELECT * FROM usuarios',  (error, rows, fields) => {
@@ -30,7 +31,7 @@ router.get("/usuarios", (req, res) => {
 router.post ("/usuarios/subir-imagen-perfil", cargador.single('imagen_perfil'), async(req, res) => {
   if(req.file){
     const {id} = req.body
-    const response = await connection.query('UPDATE usuario SET imagen_perfil = ? WHERE id = ?', [JSON.stringify(req.file), id])
+    const response = await connection.query('UPDATE usuarios SET imagen_perfil = ? WHERE ID = ?', [JSON.stringify(req.file), id])
     res.json({mensaje: 'El archivo fue cargado exitosamente', archivo : {ruta : 'uploads/' + req.file.filename}})
   }else{
     res.json({mensaje : 'El archivo no se cargo'})

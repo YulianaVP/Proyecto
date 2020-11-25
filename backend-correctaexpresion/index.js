@@ -19,7 +19,7 @@ app.use("/api/", require('./routes/respuestas'))
 app.use("/api/", require('./routes/usuarios'))
 
 app.get("/", (req, res) => {
-  res.send("API CRUD")
+  res.send("BACKEND Correcta Expresión")
 })
 
 app.get ('/Correctaexpresión', function(req, res){

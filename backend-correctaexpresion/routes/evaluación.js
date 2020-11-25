@@ -1,6 +1,6 @@
 const {Router} = require('express')
 const router = Router()
-const {connection} = require ('./../db/mysql_pool')
+const {connection} = require('../db/mysql_pool')
 
 
 router.get('/evaluacion', (req, res) => {
