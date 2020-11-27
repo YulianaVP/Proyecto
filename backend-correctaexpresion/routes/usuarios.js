@@ -39,11 +39,11 @@ router.post ("/usuarios/subir-imagen-perfil", cargador.single('imagen_perfil'), 
 })
 
 router.put ("/usuarios/:id", (req, res) => {
-
+  res.json({mensaje : 'Se registró el usuario})
 })
 
 router.delete ("/usuarios/:id", (req, res) => {
-
+  res.json({mensaje : 'El usuario fue eliminado'})
 })
 
 router.get ("/usuarios/:id", (req, res) => {

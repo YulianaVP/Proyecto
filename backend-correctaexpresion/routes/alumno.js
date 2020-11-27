@@ -16,10 +16,10 @@ const cargador = multer({
     })
   })
 
-router.post ("/alumno/subir-imagen-perfil", cargador.single('imagen_perfil'), async(req, res) => {
+router.post ("/alumno/subir-video", cargador.single('actividad_practica'), async(req, res) => {
   if(req.file){
     const {id} = req.body
-    const response = await connection.query('UPDATE usuarios SET imagen_perfil = ? WHERE ID = ?', [JSON.stringify(req.file), id])
+    const response = await connection.query('UPDATE alumnos SET actividad_practica = ? WHERE ID = ?', [JSON.stringify(req.file), id])
     res.json({mensaje: 'El archivo fue cargado exitosamente', archivo : {ruta : 'uploads/' + req.file.filename}})
   }else{
     res.json({mensaje : 'El archivo no se cargo'})
