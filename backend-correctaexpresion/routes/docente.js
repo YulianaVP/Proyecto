@@ -26,19 +26,19 @@ router.get('/docente', (req, res) => {
     })
 })
 
-router.get('/docente/:id', (req, res) => {
+router.get('/docentes/:id', (req, res) => {
 
 })
 
-router.post('/docente', (req, res) => {
+router.post('/docentes', (req, res) => {
 
 })
 
-router.put('/docente/id', (req, res) => {
+router.put('/docentes/id', (req, res) => {
 
 })
 
-router.delete('/docente/:id', (req, res) => {
+router.delete('/docentes/:id', (req, res) => {
 
 })
 

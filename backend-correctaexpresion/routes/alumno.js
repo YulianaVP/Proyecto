@@ -16,7 +16,7 @@ const cargador = multer({
     })
   })
 
-router.get('/alumno', (req, res) => {
+router.get('/alumnos', (req, res) => {
   connection.query('SELECT * FROM alumnos',  (error, rows, fields) => {
         if(!error){
             res.json(rows)
@@ -26,11 +26,17 @@ router.get('/alumno', (req, res) => {
     })
 })
 
-router.get("/alumno/:id", (req, res) => {
-
+router.get("/alumnos/:id", (req, res) => {
+  let ID = req.params.ID
+  connection.query("SELECT * FROM estudiante WHERE ID = ?",[ID] ,(error, result, fields) => {
+    if(result[0])
+      res.json(result[0])
+    else
+      res.json({mensaje : "Error ejecutando la consulta"})
+   })
 })
 
-router.post ("/alumno/subir-video", cargador.single('actividad_practica'), async(req, res) => {
+router.post ("/alumnos/subir-video", cargador.single('actividad_practica'), async(req, res) => {
   if(req.file){
     const {ID} = req.body
     const response = await connection.query('UPDATE alumnos SET actividad_practica = ? WHERE ID = ?', [JSON.stringify(req.file), ID])
@@ -40,11 +46,11 @@ router.post ("/alumno/subir-video", cargador.single('actividad_practica'), async
   }
 })
 
-router.put("/alumno/:id", (req, res) => {
+router.put("/alumnos/:id", (req, res) => {
 
 })
 
-router.delete("/alumno/:id", (req, res) => {
+router.delete("/alumnos/:id", (req, res) => {
 
 })
 
