@@ -36,8 +36,27 @@ router.get ("/usuarios/:id", (req, res) => {
    })
 })
 
-router.put ("/usuarios/:id", (req, res) => {
-  res.json({mensaje : 'Se registró el usuario'})
+router.post ("/usuarios", (req, res) => {
+  try{
+    let {
+      Nombre,
+      Contrasena,
+      Correo
+    } = req.body
+    const SQL = `INSERT INTO usuarios(Nombre, Contrasena, Correo) VALUES (?, ?, ?)`
+    const data = [Nombre, Contrasena, Correo]
+    connection.query(SQL, data,(error, result, fields) => {
+      if(error){
+      console.log(error)
+      res.status(500).json({mensaje : "Error ejecutando la consulta"})
+    }else{
+      res.json({mensaje : "Se registró el usuario"})
+    }
+    })
+  }catch(error){
+    console.log(error)
+      res.status(500).json("Error")
+  }
 })
 
 router.post ("/usuarios/subir-imagen-perfil", cargador.single('imagen_perfil'), async(req, res) => {
