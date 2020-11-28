@@ -26,6 +26,17 @@ router.get("/niveles", (req, res) => {
     })
 })
 
+router.get ("/niveles/:id", (req, res) => {
+  let id = req.params.id
+  connection.query('SELECT * FROM niveles WHERE ID = ?',[id] ,(error, result, fields) => {
+    if(result[0])
+      res.json(result[0])
+    else
+      res.json({mensaje : "Error ejecutando la consulta"})
+   })
+})
+
+
 router.post ("/niveles", (req, res) => {
 
 })
@@ -35,10 +46,6 @@ router.put ("/niveles/:id", (req, res) => {
 })
 
 router.delete ("/niveles/:id", (req, res) => {
-
-})
-
-router.get ("/niveles/:id", (req, res) => {
 
 })
 

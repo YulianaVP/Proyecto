@@ -168,3 +168,11 @@ text-align: center;
 .campologin{
   font-size: 20px;
 }
+
+.form-group-login{
+  margin-top: 20px;
+}
+.btn-login{
+  font-size: 20px;
+  margin-top: 30px;
+}

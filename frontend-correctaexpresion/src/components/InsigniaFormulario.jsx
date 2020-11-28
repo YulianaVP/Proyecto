@@ -9,6 +9,7 @@ class InsigniaFormulario extends React.Component {
         console.log(BACKEND_CE)
         this.state = {
             cargando : false,
+            Nombre : null,
             Correo : null,
             Contrasena : null
         }
@@ -24,10 +25,11 @@ class InsigniaFormulario extends React.Component {
     }
 
     iniciarsesion = (event) =>{
-      if(document.querySelector("#formlogin").reportValidity()){
+      if(document.querySelector("#frmlogin").reportValidity()){
         fetch(`${BACKEND_CE}api/usuarios/iniciarsesion`,{
           method : "POST",
           body : JSON.stringify({
+            "Nombre" : this.state.Nombre,
             "Correo" : this.state.Correo,
             "Contrasena" : this.state.Contrasena
           }),
@@ -51,8 +53,8 @@ class InsigniaFormulario extends React.Component {
         return (
 
               <div>
-                <form id= "formlogin">
-                  <div className="form-group">
+                <form id= "frmlogin">
+                  <div className="form-group-login">
                     <h2 className="campologin">Nombre de usuario:</h2>
                     <input
                       type="name"
@@ -63,7 +65,7 @@ class InsigniaFormulario extends React.Component {
                       required
                     />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group-login">
                     <h2 className="campologin">Correo:</h2>
                     <input
                       type="name"
@@ -74,7 +76,7 @@ class InsigniaFormulario extends React.Component {
                       required
                     />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group-login">
                     <h2 className="campologin">Contraseña:</h2>
                     <input
                       type="password"
@@ -85,7 +87,7 @@ class InsigniaFormulario extends React.Component {
                       required
                     />
                   </div>
-                  <Link onClick={this.iniciarsesion} button className=" btn btn-orange btn btn-info btn-block" type="submit">
+                  <Link onClick={this.iniciarsesion} button className="btn-login btn-light btn btn-info btn-block" type="submit">
                     <strong>Continuar</strong>
                   </Link>
                 </form>

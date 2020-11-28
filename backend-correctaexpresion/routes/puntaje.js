@@ -26,12 +26,26 @@ router.get('/puntaje', (req, res) => {
     })
 })
 
-router.get('/puntaje/:id', (req, res) => {})
+router.get('/puntaje/:id', (req, res) => {
+  let id = req.params.id
+  connection.query('SELECT * FROM puntajes WHERE ID = ?',[id] ,(error, result, fields) => {
+    if(result[0])
+      res.json(result[0])
+    else
+      res.json({mensaje : "Error ejecutando la consulta"})
+   })
+})
 
-router.post('/puntaje', (req, res) => {})
+router.post('/puntaje', (req, res) => {
 
-router.put('/puntaje/id', (req, res) => {})
+})
 
-router.delete('/puntaje/:id', (req, res) => {})
+router.put('/puntaje/id', (req, res) => {
+
+})
+
+router.delete('/puntaje/:id', (req, res) => {
+
+})
 
 module.exports = router

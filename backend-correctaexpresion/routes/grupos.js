@@ -26,6 +26,16 @@ router.get("/grupos", (req, res) => {
     })
 })
 
+router.get ("/grupos/:id", (req, res) => {
+  let id = req.params.id
+  connection.query('SELECT * FROM grupos WHERE ID = ?',[id] ,(error, result, fields) => {
+    if(result[0])
+      res.json(result[0])
+    else
+      res.json({mensaje : "Error ejecutando la consulta"})
+   })
+})
+
 router.post ("/grupos", (req, res) => {
 
 })
@@ -35,10 +45,6 @@ router.put ("/grupos/:id", (req, res) => {
 })
 
 router.delete ("/grupos/:id", (req, res) => {
-
-})
-
-router.get ("/grupos/:id", (req, res) => {
 
 })
 
