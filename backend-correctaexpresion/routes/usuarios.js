@@ -36,8 +36,8 @@ router.put ("/usuarios/:id", (req, res) => {
 
 router.post ("/usuarios/subir-imagen-perfil", cargador.single('imagen_perfil'), async(req, res) => {
   if(req.file){
-    const {id} = req.body
-    const response = await connection.query('UPDATE usuarios SET imagen_perfil = ? WHERE ID = ?', [JSON.stringify(req.file), id])
+    const {ID} = req.body
+    const response = await connection.query('UPDATE usuarios SET imagen_perfil = ? WHERE ID = ?', [JSON.stringify(req.file), ID])
     res.json({mensaje: 'El archivo fue cargado exitosamente', archivo : {ruta : 'uploads/' + req.file.filename}})
   }else{
     res.json({mensaje : 'El archivo no se cargo'})

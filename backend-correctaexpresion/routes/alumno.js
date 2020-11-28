@@ -32,8 +32,8 @@ router.get("/alumno/:id", (req, res) => {
 
 router.post ("/alumno/subir-video", cargador.single('actividad_practica'), async(req, res) => {
   if(req.file){
-    const {id} = req.body
-    const response = await connection.query('UPDATE alumnos SET actividad_practica = ? WHERE ID = ?', [JSON.stringify(req.file), id])
+    const {ID} = req.body
+    const response = await connection.query('UPDATE alumnos SET actividad_practica = ? WHERE ID = ?', [JSON.stringify(req.file), ID])
     res.json({mensaje: 'El archivo fue cargado exitosamente', archivo : {ruta : 'uploads/' + req.file.filename}})
   }else{
     res.json({mensaje : 'El archivo no se cargo'})
