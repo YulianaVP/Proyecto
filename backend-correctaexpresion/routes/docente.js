@@ -16,7 +16,7 @@ const cargador = multer({
     })
   })
 
-router.get('/docente', (req, res) => {
+router.get('/docentes', (req, res) => {
   connection.query('SELECT * FROM docentes',  (error, rows, fields) => {
         if(!error){
             res.json(rows)
@@ -26,8 +26,14 @@ router.get('/docente', (req, res) => {
     })
 })
 
-router.get('/docentes/:id', (req, res) => {
-
+router.get("/docentes/:id", (req, res) => {
+  let ID = req.params.ID
+  connection.query("SELECT * FROM docentes WHERE ID = ?",[ID] ,(error, result, fields) => {
+    if(result[0])
+      res.json(result[0])
+    else
+      res.json({mensaje : "Error ejecutando la consulta"})
+   })
 })
 
 router.post('/docentes', (req, res) => {

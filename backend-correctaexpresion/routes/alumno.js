@@ -27,8 +27,8 @@ router.get('/alumnos', (req, res) => {
 })
 
 router.get("/alumnos/:id", (req, res) => {
-  let ID = req.params.ID
-  connection.query("SELECT * FROM estudiante WHERE ID = ?",[ID] ,(error, result, fields) => {
+  let id = req.params.id
+  connection.query('SELECT * FROM alumnos WHERE ID = ?',[id] ,(error, result, fields) => {
     if(result[0])
       res.json(result[0])
     else

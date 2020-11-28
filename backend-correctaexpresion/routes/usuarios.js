@@ -27,7 +27,13 @@ router.get("/usuarios", (req, res) => {
 })
 
 router.get ("/usuarios/:id", (req, res) => {
-  
+  let id = req.params.id
+  connection.query('SELECT * FROM usuarios WHERE ID = ?',[id] ,(error, result, fields) => {
+    if(result[0])
+      res.json(result[0])
+    else
+      res.json({mensaje : "Error ejecutando la consulta"})
+   })
 })
 
 router.put ("/usuarios/:id", (req, res) => {
