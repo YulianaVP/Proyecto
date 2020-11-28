@@ -5,7 +5,6 @@ const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
 const {connection} = require('../db/mysql_pool')
 
-
 const cargador = multer({
     storage : multer.diskStorage({
       destination : (req, file, cb) => {
@@ -17,7 +16,6 @@ const cargador = multer({
     })
   })
 
-
 router.get("/usuarios", (req, res) => {
     connection.query('SELECT * FROM usuarios',  (error, rows, fields) => {
         if(!error){
@@ -26,6 +24,14 @@ router.get("/usuarios", (req, res) => {
             res.json({error: "Error ejecutando la consulta"})
         }
     })
+})
+
+router.get ("/usuarios/:id", (req, res) => {
+  
+})
+
+router.put ("/usuarios/:id", (req, res) => {
+  res.json({mensaje : 'Se registró el usuario'})
 })
 
 router.post ("/usuarios/subir-imagen-perfil", cargador.single('imagen_perfil'), async(req, res) => {
@@ -38,16 +44,8 @@ router.post ("/usuarios/subir-imagen-perfil", cargador.single('imagen_perfil'), 
   }
 })
 
-router.put ("/usuarios/:id", (req, res) => {
-  res.json({mensaje : 'Se registró el usuario})
-})
-
 router.delete ("/usuarios/:id", (req, res) => {
   res.json({mensaje : 'El usuario fue eliminado'})
-})
-
-router.get ("/usuarios/:id", (req, res) => {
-
 })
 
 module.exports = router

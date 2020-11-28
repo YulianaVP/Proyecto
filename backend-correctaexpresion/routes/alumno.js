@@ -16,6 +16,20 @@ const cargador = multer({
     })
   })
 
+router.get('/alumno', (req, res) => {
+  connection.query('SELECT * FROM alumnos',  (error, rows, fields) => {
+        if(!error){
+            res.json(rows)
+        }else{
+            res.json({error: "Error ejecutando la consulta"})
+        }
+    })
+})
+
+router.get("/alumno/:id", (req, res) => {
+
+})
+
 router.post ("/alumno/subir-video", cargador.single('actividad_practica'), async(req, res) => {
   if(req.file){
     const {id} = req.body
@@ -26,25 +40,11 @@ router.post ("/alumno/subir-video", cargador.single('actividad_practica'), async
   }
 })
 
-router.get('/alumno', (req, res) => {
-  connection.query("SELECT * FROM alumno", (error, result, fields) => {
-    res.json(result)
-  })
-})
-
-router.post("/alumno", (req, res) => {
-
-})
-
 router.put("/alumno/:id", (req, res) => {
 
 })
 
 router.delete("/alumno/:id", (req, res) => {
-
-})
-
-router.get("/alumno/:id", (req, res) => {
 
 })
 
